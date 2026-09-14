@@ -73,6 +73,19 @@ static unsigned int default_target_loads_sys[] = {DEFAULT_MULTI_TL_SYS};
 
 #define IOWAIT_BOOST_MIN        (SCHED_CAPACITY_SCALE / 8)
 
+#ifdef CONFIG_OPLUS_SYSTEM_KERNEL_QCOM
+/*
+ * The stock OPLUS QCOM kernel defines WALT_CPUFREQ_IOWAIT in its WALT
+ * cpufreq interface.  Peridot's WALT (kernel/sched/walt/walt.h) only carries
+ * the ROLLOVER/CONTINUE/... flags and never signals IOWAIT in callback flags,
+ * so fall back to the standard schedutil flag to keep the same semantics as
+ * the non-VT_CAP path.
+ */
+#ifndef WALT_CPUFREQ_IOWAIT
+#define WALT_CPUFREQ_IOWAIT     SCHED_CPUFREQ_IOWAIT
+#endif
+#endif
+
 #ifdef CONFIG_OPLUS_UAG_USE_TL
 /* Target load.  Lower values result in higher CPU speeds. */
 #define DEFAULT_TARGET_LOAD 80
