@@ -1,4 +1,6 @@
 GCOV_PROFILE := y
+LINUXINCLUDE += -I$(srctree)/
+
 obj-$(CONFIG_OPLUS_CPU_FREQ_GOV_UAG) += cpufreq_uag.o
 cpufreq_uag-y += cpufreq_uag_main.o
 cpufreq_uag-$(CONFIG_UAG_NONLINEAR_FREQ_CTL) += nonlinear_opp_cap.o
