@@ -44,6 +44,22 @@
 #include <../kernel/oplus_cpu/sched/eas_opt/oplus_cap.h>
 #endif
 
+/*
+ * Stubs for the OPLUS kernel-side cpufreq_health symbols (see
+ * linux/cpufreq_health.h).  Peridot (SM8635) does not ship the OPLUS
+ * cpufreq_health subsystem that normally provides these, so this module
+ * carries its own copies.  freq_to_voltage() uses the frequency as a
+ * monotonic voltage proxy so the cobuck heuristic stays well-defined.
+ */
+bool uaggov_disabled;
+
+unsigned int freq_to_voltage(int cid, unsigned int freq)
+{
+	(void)cid;
+
+	return freq;
+}
+
 #if IS_ENABLED(CONFIG_OPLUS_SCHED_TUNE)
 typedef unsigned long (*stune_util_t)(int cpu, unsigned long other_util,
 		unsigned long util);
