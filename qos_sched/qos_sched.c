@@ -11,6 +11,7 @@
 #include <linux/proc_fs.h>
 #include <linux/cgroup.h>
 #include <linux/sched/prio.h>
+#include <linux/sched/cputime.h>
 #include <kernel/sched/sched.h>
 #include <uapi/linux/sched/types.h>
 #include <trace/hooks/sched.h>
