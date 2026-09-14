@@ -23,9 +23,9 @@
 #include <trace/hooks/signal.h>
 #include <linux/version.h>
 #include <linux/sched/cputime.h>
-#include "../../kernel/sched/sched.h"
-#include "../../drivers/android/binder_internal.h"
-#include "../../drivers/android/binder_alloc.h"
+#include <kernel/sched/sched.h>
+#include <drivers/android/binder_internal.h>
+#include <drivers/android/binder_alloc.h>
 
 #define HANS_NOERROR             (0)
 #define HANS_ERROR               (-1)

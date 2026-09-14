@@ -26,9 +26,9 @@
 #endif
 
 #if IS_ENABLED(CONFIG_OPLUS_FEATURE_FRAME_BOOST)
-#include "../sched/frame_boost/frame_group.h"
-#include "../sched/frame_boost/frame_boost.h"
-#include "../sched/frame_boost/frame_debug.h"
+#include <../kernel/oplus_cpu/sched/frame_boost/frame_group.h>
+#include <../kernel/oplus_cpu/sched/frame_boost/frame_boost.h>
+#include <../kernel/oplus_cpu/sched/frame_boost/frame_debug.h>
 #endif
 
 #if IS_ENABLED(CONFIG_OPLUS_FEATURE_OCH)
